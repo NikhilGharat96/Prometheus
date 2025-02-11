@@ -18,11 +18,11 @@ EOF
 
 # execute this commands on ec2
 
-- sudo yum update -y
-- sudo yum -y install prometheus2 node_exporter
-- rpm -qi prometheus2
-- sudo systemctl start prometheus node_exporter
-- systemctl status prometheus.service node_exporter.service
+sudo yum update -y
+sudo yum -y install prometheus2 node_exporter
+rpm -qi prometheus2
+sudo systemctl start prometheus node_exporter
+systemctl status prometheus.service node_exporter.service
 
 # Add ports in SG.
 - add port 9090 in security group    ...... prometheus default port
