@@ -29,4 +29,6 @@ EOF
 - copy ec2 public IP and paste in browser with port no 9090
 - now you should see prometheus dashboard
 
-#sudo nano /etc/prometheus/prometheus.yml
+#sudo nano /etc/prometheus/prometheus.yml              .......... add configuratin for nodeexporter. i added this in prometheus.yml file so you check
+                                                                  and open this file on your ec2 and add this file content in that file and reload prometheus.
+
