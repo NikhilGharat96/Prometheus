@@ -1,7 +1,7 @@
 # prometheusinstallation For Amazon-Linux
 
 - copy these all lines and execute as one command
-- ------------------------------------------------------
+- ------------------------------------------------------              .............means we add the prometheus software supported links in prometheus.repo so next we can install using yum. 
 
 sudo tee /etc/yum.repos.d/prometheus.repo <<EOF
 [prometheus]
@@ -25,7 +25,8 @@ EOF
 - systemctl status prometheus.service node_exporter.service
 
 # Add ports in SG.
-- add port 9090 in security group
+- add port 9090 in security group    ...... prometheus default port
+- add port 9100 in security group    ...... node-exporter default port
 - copy ec2 public IP and paste in browser with port no 9090
 - now you should see prometheus dashboard
 
