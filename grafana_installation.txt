@@ -1,0 +1,43 @@
+
+# Grafana installation on Amazon linux 
+
+- copy these all lines and execute as one command
+- ------------------------------------------------------
+
+sudo tee /etc/yum.repos.d/grafana.repo <<EOF
+[grafana]
+name=Grafana Repository
+baseurl=https://packages.grafana.com/oss/rpm
+repo_gpgcheck=1
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.grafana.com/gpg.key
+EOF
+
+-------------------------------------------------------
+# if you use t2.micro instance type 
+  execute these commands for allocating swap memory
+* when installation of Grafana if the Grafana killed error is shows so execute these commands, that is for create swapfile. 
+
+sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile swap swap defaults 0 0' | sudo tee -a /etc/fstab
+
+----------------------------------------------------------
+
+# Install grafana , start and check status.
+
+sudo dnf install grafana -y
+sudo /bin/systemctl start grafana-server.service
+sudo systemctl status grafana-server
+
+-------------------------------------------------------------
+# Add port 
+- add port no 3000 in security group      .......grafana default port no.
+- copy ec2 public_ip and paste in browser with port no 3000.           ....... eg. 168.32.5.0:3000
+- then grafana login page is open 
+- grafana default username = admin   pass = admin
+- after login you can set new password.
+
