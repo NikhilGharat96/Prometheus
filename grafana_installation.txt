@@ -1,6 +1,12 @@
 
 # Grafana installation on Amazon linux 
 
+sudo yum install -y https://dl.grafana.com/oss/release/grafana-10.0.3-1.x86_64.rpm
+sudo systemctl status grafana-server         ....... check status
+
+
+**************** OR ***************************
+
 - copy these all lines and execute as one command
 - ------------------------------------------------------
 
