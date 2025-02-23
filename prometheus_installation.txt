@@ -32,4 +32,5 @@ systemctl status prometheus.service node_exporter.service
 
 #sudo nano /etc/prometheus/prometheus.yml              .......... add configuratin for nodeexporter. i added this in prometheus.yml file so you check
                                                                   and open this file on your ec2 and add this file content in that file and reload prometheus.
+ # nodeexporter is service which is shows the hardware related info i.e. CPU usage and RAM usage etc. in prometheus.
 
